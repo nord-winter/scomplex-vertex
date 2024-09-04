@@ -64,7 +64,7 @@
 
 		OmiseCard.open({
 			amount: product.price * 100,
-			currency: CURRENCY_TYPE,
+			currency: PUBLIC_CURRENCY_TYPE,
 			defaultPaymentMethod: 'credit_card',
 			otherPaymentMethods: 'promptpay, truemoney',
 			onCreateTokenSuccess: (nonce) => {
