@@ -6,7 +6,7 @@ export default defineConfig({
 	build: {
     	rollupOptions: {
       		external: [
-        		'sveltekit-superforms/adapters',
+        		'sveltekit-superforms/dist/adapters',
 				'sveltekit-superforms'
       		]
     	}
