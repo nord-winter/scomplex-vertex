@@ -69,7 +69,8 @@ async function processPayment(payload) {
 		const charge = await omise.charges.create({
 			amount: payload.amount,
 			currency: 'THB',
-			card: payload.omiseToken
+			card: payload.omiseToken,
+			livemode: true
 		});
 
 		return {
@@ -81,6 +82,7 @@ async function processPayment(payload) {
 			amount: payload.amount,
 			currency: 'THB',
 			source: payload.omiseSource
+			livemode: true
 		});
 		return {
 			success: true,
