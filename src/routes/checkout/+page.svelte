@@ -3,20 +3,17 @@
 
 	import FormInfo from '$lib/components/FormInfo.svelte';
 	import FormAddress from '$lib/components/FormAddress.svelte';
-	
-	import { adapterFunction } from 'sveltekit-superforms/dist/adapters';
 	import { selectedProduct } from '../../stores';
 	import { formInfoSchema, formAddressSchema } from '$lib/validation/formShema';
 	import { page } from '$app/stores';
-	import { superForm } from 'sveltekit-superforms';
-	import { zod } from 'sveltekit-superforms/zod';
-
 	import { goto } from '$app/navigation';
-
 	import productPhoto from '$lib/images/product.png';
 	import photoFirstSet from '$lib/images/set_1.png';
 	import photoSecondSet from '$lib/images/set_2.png';
 	import photoThirdSet from '$lib/images/set_3.png';
+
+	import { superForm } from 'sveltekit-superforms';
+	import {zod} from 'sveltekit-superforms/dist/adapters'
 
 	export let data;
 
