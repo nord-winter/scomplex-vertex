@@ -9,7 +9,7 @@
 	import { formInfoSchema, formAddressSchema } from '$lib/validation/formShema';
 	import { page } from '$app/stores';
 	import { superForm } from 'sveltekit-superforms';
-	import { zod } from 'sveltekit-superforms/dist/adapters';
+	import { zod } from 'sveltekit-superforms/zod';
 
 	import { goto } from '$app/navigation';
 
