@@ -23,10 +23,10 @@ export async function POST({ request }) {
 		const realIp = headers.get('x-real-ip');
 		const socketIp = request.socket?.remoteAddress || '';
 
-		const ip = forwardedFor?.split(',').shift().trim() || realIp || socketIp || '';
+		payload.ip = forwardedFor?.split(',').shift().trim() || realIp || socketIp || '';
 
 
-		payload.ip = socketIp;
+		// payload.ip = ip.length == 0 ? null : ip;
 		payload.refererUri = refererUri;
 
 		console.log(request);
