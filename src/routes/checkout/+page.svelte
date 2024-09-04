@@ -59,7 +59,7 @@
 
 	function handlePayment() {
 		OmiseCard.configure({
-			publicKey: OPN_PUB_KEY
+			publicKey: PUBLIC_OPN_KEY
 		});
 
 		OmiseCard.open({
