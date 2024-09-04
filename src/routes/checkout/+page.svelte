@@ -1,19 +1,18 @@
 <script>
 	// @ts-nocheck
-
-	import FormInfo from '$lib/components/FormInfo.svelte';
-	import FormAddress from '$lib/components/FormAddress.svelte';
-	import { selectedProduct } from '../../stores';
-	import { formInfoSchema, formAddressSchema } from '$lib/validation/formShema';
-	import { page } from '$app/stores';
-	import { goto } from '$app/navigation';
 	import productPhoto from '$lib/images/product.png';
 	import photoFirstSet from '$lib/images/set_1.png';
 	import photoSecondSet from '$lib/images/set_2.png';
 	import photoThirdSet from '$lib/images/set_3.png';
-
+	import FormInfo from '$lib/components/FormInfo.svelte';
+	import FormAddress from '$lib/components/FormAddress.svelte';
 	import { superForm } from '/node_modules/sveltekit-superforms';
-	import { zod } from 'sveltekit-superforms/adapters'
+	import { zod } from 'sveltekit-superforms/adapters';
+	import { selectedProduct } from '../../stores';
+	import { formInfoSchema, formAddressSchema } from '$lib/validation/formShema';
+	import { page } from '$app/stores';
+	import { goto } from '$app/navigation';
+	import { PUBLIC_OPN_KEY, PUBLIC_CURRENCY_TYPE } from '$env/static/public';
 
 	export let data;
 
@@ -21,7 +20,6 @@
 		goto('/');
 	}
 
-	const CURRENCY_TYPE = 'THB';
 	const steps = [zod(formInfoSchema), zod(formAddressSchema), 3];
 	const { form, errors, message, enhance, validateForm, options } = superForm(data.form, {
 		dataType: 'json',
@@ -61,7 +59,7 @@
 
 	function handlePayment() {
 		OmiseCard.configure({
-			publicKey: 'pkey_test_60441fm7b49zlzbf5ni'
+			publicKey: OPN_PUB_KEY
 		});
 
 		OmiseCard.open({

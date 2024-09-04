@@ -1,22 +1,22 @@
 import omiseModule from 'omise';
-import { SECRET_KEY } from '$env/static/private';
+import {
+	OPN_SECRET_KEY,
+	SR_COMPANY_ID,
+	SR_API_TOKEN,
+	SR_STATUS_ID,
+	SR_PROJECT_ID
+} from '$env/static/private';
 
 const omise = omiseModule({
-	secretKey: SECRET_KEY
+	secretKey: OPN_SECRET_KEY
 });
-
-const SR_COMPANY_ID = '54';
-const SR_API_TOKEN =
-	'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2RlLmJhY2tlbmQuc2FsZXNyZW5kZXIuY29tLyIsImF1ZCI6IkNSTSIsImp0aSI6ImUzMjhhMjkwMTZhMDRhODQ5NDRiZGFlOWE3ZDM2ZDQxIiwiaWF0IjoxNzIxMTkyMTE4LCJ0eXBlIjoiYXBpIiwiY2lkIjoiNTQiLCJyZWYiOnsiYWxpYXMiOiJBUEkiLCJpZCI6IjIifX0.3TrkHOL42Z9c_flGBuPi8nymoSQk2Hm39-NbUuRUsxA';
-const SR_STATUS_ID = '19';
-const SR_PROJECT_ID = '3';
 
 export async function POST({ request }) {
 	try {
 		const payload = await request.json();
 
 		const headers = request.headers;
-		
+
 		const refererUri = headers.get('referer');
 
 		const forwardedFor = headers.get('x-forwarded-for');
@@ -93,7 +93,6 @@ async function processPayment(payload) {
 
 async function salesRenderApi(payload) {
 	try {
-
 		payload.phone = formatPhoneNumber(payload.phone);
 
 		const query = `
@@ -116,7 +115,7 @@ async function salesRenderApi(payload) {
 							field: 'name1',
 							value: {
 								firstName: payload.name || '',
-								lastName: '' 
+								lastName: ''
 							}
 						}
 					],
@@ -143,7 +142,7 @@ async function salesRenderApi(payload) {
 						{
 							itemId: parseInt(payload.productId, 10),
 							quantity: 1,
-							variation: 1,
+							variation: 1
 						}
 					]
 				},
@@ -185,12 +184,9 @@ async function salesRenderApi(payload) {
 }
 
 function formatPhoneNumber(phone) {
-	
 	if (phone.startsWith('+66')) {
-		
 		phone = phone.slice(3);
 
-		
 		return '0' + phone;
 	}
 	return phone;
