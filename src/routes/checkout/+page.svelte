@@ -3,7 +3,8 @@
 
 	import FormInfo from '$lib/components/FormInfo.svelte';
 	import FormAddress from '$lib/components/FormAddress.svelte';
-
+	
+	import { adapterFunction } from 'sveltekit-superforms/adapters';
 	import { selectedProduct } from '../../stores';
 	import { formInfoSchema, formAddressSchema } from '$lib/validation/formShema';
 	import { page } from '$app/stores';
