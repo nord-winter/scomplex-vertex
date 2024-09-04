@@ -12,7 +12,7 @@
 	import photoSecondSet from '$lib/images/set_2.png';
 	import photoThirdSet from '$lib/images/set_3.png';
 
-	import { superForm } from 'sveltekit-superforms';
+	import { superForm } from '/node_modules/sveltekit-superforms';
 	import { zod } from 'sveltekit-superforms/adapters'
 
 	export let data;
