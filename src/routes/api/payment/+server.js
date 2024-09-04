@@ -23,10 +23,7 @@ export async function POST({ request }) {
 		const realIp = headers.get('x-real-ip');
 		const socketIp = request.socket?.remoteAddress || '';
 
-		payload.ip = forwardedFor?.split(',').shift().trim() || realIp || socketIp || '';
-
-
-		// payload.ip = ip.length == 0 ? null : ip;
+		payload.ip = forwardedFor?.split(',').shift().trim() || realIp || socketIp || null;
 		payload.refererUri = refererUri;
 
 		console.log(request);
@@ -147,7 +144,6 @@ async function salesRenderApi(payload) {
 							itemId: parseInt(payload.productId, 10),
 							quantity: 1,
 							variation: 1,
-							price: parseInt(payload.price, 10) || 0
 						}
 					]
 				},
