@@ -200,7 +200,7 @@
 								(isPayButtonEnabled = step === 3 && document.getElementById('CheckPolicy').checked)}
 						/>
 						<label class="form-check-label" for="CheckPolicy">
-							ฉันยอมรับ <a href="#">ข้อตกลงและเงื่อนไข</a> และ <a href="#">นโยบายความเป็นส่วนตัว</a>
+							ฉันยอมรับ <a href="/privacy">ข้อตกลงและเงื่อนไข</a> และ <a href="/privacy">นโยบายความเป็นส่วนตัว</a>
 						</label>
 					</div>
 					<input type="hidden" name="omiseToken" />
