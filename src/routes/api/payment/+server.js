@@ -121,6 +121,12 @@ async function salesRenderApi(payload) {
 							}
 						}
 					],
+					emailFields: [
+						{
+							field: 'email',
+							value: payload.email || ''
+						}
+					],
 					phoneFields: [
 						{
 							field: 'phone',
