@@ -6,7 +6,7 @@ import {
 	SR_STATUS_ID,
 	SR_PROJECT_ID
 } from '$env/static/private';
-
+console.log(OPN_SECRET_KEY);
 const omise = omiseModule({
 	secretKey: OPN_SECRET_KEY
 });
