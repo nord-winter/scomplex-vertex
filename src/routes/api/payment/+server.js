@@ -7,6 +7,7 @@ import {
 	SR_PROJECT_ID
 } from '$env/static/private';
 
+const LIVEMODE = false;
 const omise = omiseModule({
 	secretKey: OPN_SECRET_KEY
 });
@@ -70,7 +71,7 @@ async function processPayment(payload) {
 			amount: payload.amount,
 			currency: 'THB',
 			card: payload.omiseToken,
-			livemode: true
+			livemode: LIVEMODE
 		});
 
 		return {
@@ -82,7 +83,7 @@ async function processPayment(payload) {
 			amount: payload.amount,
 			currency: 'THB',
 			source: payload.omiseSource,
-			livemode: true
+			livemode: LIVEMODE
 		});
 		return {
 			success: true,
