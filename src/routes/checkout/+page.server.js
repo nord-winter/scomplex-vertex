@@ -14,10 +14,7 @@ export const load = async () => {
 		postcode: ''
 	};
 
-
-	// if (!form) {
-	// 	throw redirect(307, '/');
-	// }
+	
 
 	return { form };
 };
