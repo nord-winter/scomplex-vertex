@@ -1,8 +1,7 @@
 import omiseModule from 'omise';
 import { OPN_SECRET_KEY } from '$env/static/private';
-import { BASE_URL } from '$env/static/private'; 
 
-const LIVEMODE = false;
+const LIVEMODE = true;
 const omise = omiseModule({
 	secretKey: OPN_SECRET_KEY
 });
@@ -10,7 +9,10 @@ const omise = omiseModule({
 
 export async function POST({ request }) {
 	try {
+		const host = request.headers.get('origin') || '';
 		const payload = await request.json();
+		payload.host = host;
+		console.log(payload);
 		const paymentResult = await processPayment(payload);
 
 		if (paymentResult.success) {
@@ -46,7 +48,7 @@ async function processPayment(payload) {
 			amount: payload.amount,
 			currency: 'THB',
 			card: payload.omiseToken,
-			return_uri: `${BASE_URL}/`,
+			return_uri: payload.host,
 			livemode: LIVEMODE
 		});
 
