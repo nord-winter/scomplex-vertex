@@ -11,7 +11,7 @@ export async function POST({ request }) {
 	try {
 		const host = request.headers.get('origin') || '';
 		const payload = await request.json();
-		payload.host = host;
+		payload.host = host + '/thanks';
 		console.log(payload);
 		const paymentResult = await processPayment(payload);
 
