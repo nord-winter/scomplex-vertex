@@ -31,6 +31,7 @@
 	};
 
 	function selectProduct(product) {
+		localStorage.setItem('selectedProduct', JSON.stringify(product));
 		selectedProduct.set(product);
 		goto('/checkout');
 	}
