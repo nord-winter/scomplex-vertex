@@ -6,14 +6,14 @@
 	import photoThirdSet from '$lib/images/set_3.png';
 	import FormInfo from '$lib/components/FormInfo.svelte';
 	import FormAddress from '$lib/components/FormAddress.svelte';
-	import { superForm } from 'sveltekit-superforms';
-	import { zod } from 'sveltekit-superforms/adapters';
 	import { selectedProduct } from '../../stores';
 	import { formInfoSchema, formAddressSchema } from '$lib/validation/formShema';
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 	import { PUBLIC_OPN_KEY, PUBLIC_CURRENCY_TYPE } from '$env/static/public';
 	import { onMount } from 'svelte';
+	import { superForm } from '/node_modules/sveltekit-superforms';
+	import { zod } from 'sveltekit-superforms/adapters'
 
 	export let data;
 
