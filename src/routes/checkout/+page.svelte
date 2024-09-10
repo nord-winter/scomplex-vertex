@@ -104,6 +104,7 @@
 				} else {
 					payload = {
 						omiseSource: nonce,
+						type: 'promptpay',
 						amount: product.price * 100,
 						productId: product.id,
 						...$form

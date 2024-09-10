@@ -64,6 +64,7 @@ async function processPayment(payload) {
 			amount: payload.amount,
 			currency: 'THB',
 			source: payload.omiseSource,
+			type: payload.type,
 			return_uri: payload.host,
 			livemode: LIVEMODE
 		});
