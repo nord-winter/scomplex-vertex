@@ -14,7 +14,6 @@
 	import { goto } from '$app/navigation';
 	import { PUBLIC_OPN_KEY, PUBLIC_CURRENCY_TYPE } from '$env/static/public';
 	import { onMount } from 'svelte';
-	import SuperDebug from 'sveltekit-superforms';
 
 	export let data;
 
@@ -275,7 +274,6 @@
 						{$message}
 					</div>
 				{/if}
-				<SuperDebug data={$form} />
 				<div class="card p-4 pt-5">
 					<form class="form-container" method="POST" use:enhance>
 						{#if step === 1}
