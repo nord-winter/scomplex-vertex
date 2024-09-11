@@ -115,7 +115,7 @@
 				const paymentResult = await processPayment(payload);
 				
 				if (paymentResult.success && paymentResult.authorize_uri) {
-					window.location.href = paymentResult.authorize_uri;
+					// window.location.href = paymentResult.authorize_uri;
 				} else {
 					console.error('Error during payment:', paymentResult);
 				}
