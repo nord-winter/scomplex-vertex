@@ -21,6 +21,7 @@ export async function POST({ request }) {
 				JSON.stringify({
 					success: true,
 					message: 'Payment processed successfully',
+					data: paymentResult.data,
 					authorize_uri: paymentResult.authorize_uri
 				}),
 				{ status: 200 }
@@ -65,6 +66,7 @@ async function processPayment(payload) {
 			barcode: payload.type || 'promptpay',
 			amount: payload.amount,
 			currency: payload.currency,
+			flow: ,
 			livemode: LIVEMODE
 		};
 
@@ -74,7 +76,6 @@ async function processPayment(payload) {
 			amount: payload.amount,
 			currency: payload.currency,
 			source: resSource.id,
-			return_uri: payload.host,
 			livemode: LIVEMODE,
 			
 		});
