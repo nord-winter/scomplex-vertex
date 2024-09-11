@@ -1,9 +1,11 @@
 import omiseModule from 'omise';
 import { OPN_SECRET_KEY } from '$env/static/private';
+import { PUBLIC_OPN_KEY } from '$env/static/public';
 
 const LIVEMODE = true;
 const omise = omiseModule({
-	secretKey: OPN_SECRET_KEY
+	secretKey: OPN_SECRET_KEY,
+	publicKey: PUBLIC_OPN_KEY
 });
 
 
@@ -60,8 +62,10 @@ async function processPayment(payload) {
 		
 		const source = {
 			type: payload.type || 'promptpay',
+			barcode: payload.type || 'promptpay',
 			amount: payload.amount,
-			currency: payload.currency
+			currency: payload.currency,
+			livemode: LIVEMODE
 		};
 
 		const resSource = await omise.sources.create(source);
@@ -71,7 +75,8 @@ async function processPayment(payload) {
 			currency: payload.currency,
 			source: resSource.id,
 			return_uri: payload.host,
-			livemode: LIVEMODE
+			livemode: LIVEMODE,
+			
 		});
 		return {
 			success: true,
