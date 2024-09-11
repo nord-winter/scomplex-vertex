@@ -66,7 +66,6 @@ async function processPayment(payload) {
 			barcode: payload.type || 'promptpay',
 			amount: payload.amount,
 			currency: payload.currency,
-			flow: ,
 			livemode: LIVEMODE
 		};
 
