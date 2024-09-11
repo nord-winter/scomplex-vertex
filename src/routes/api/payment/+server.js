@@ -13,7 +13,7 @@ export async function POST({ request }) {
 	try {
 		const host = request.headers.get('origin') || '';
 		const payload = await request.json();
-		// payload.host = host + '/thanks';
+		payload.host = host + '/thanks';
 		const paymentResult = await processPayment(payload);
 
 		if (paymentResult.success) {
