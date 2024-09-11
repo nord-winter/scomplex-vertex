@@ -99,6 +99,7 @@
 						omiseToken: nonce,
 						amount: product.price * 100,
 						productId: product.id,
+						currency: PUBLIC_CURRENCY_TYPE,
 						...$form
 					};
 				} else {
@@ -107,6 +108,7 @@
 						type: 'promptpay',
 						amount: product.price * 100,
 						productId: product.id,
+						currency: PUBLIC_CURRENCY_TYPE,
 						...$form
 					};
 				}

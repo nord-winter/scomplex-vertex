@@ -12,7 +12,6 @@ export async function POST({ request }) {
 		const host = request.headers.get('origin') || '';
 		const payload = await request.json();
 		payload.host = host + '/thanks';
-		console.log(payload);
 		const paymentResult = await processPayment(payload);
 
 		if (paymentResult.success) {
@@ -46,7 +45,7 @@ async function processPayment(payload) {
 	if (payload.amount > 0 && payload.omiseToken) {
 		const charge = await omise.charges.create({
 			amount: payload.amount,
-			currency: 'THB',
+			currency: payload.currency,
 			card: payload.omiseToken,
 			return_uri: payload.host,
 			livemode: LIVEMODE
@@ -57,14 +56,20 @@ async function processPayment(payload) {
 			data: { transactionId: charge.id, amount: payload.amount, charge: charge },
       		authorize_uri: charge.authorize_uri
 		};
-
-		// TODO SOURCE
 	} else if (payload.amount > 0 && payload.omiseSource) {
+		
+		const source = {
+			type: payload.type || 'promptpay',
+			amount: payload.amount,
+			currency: payload.currency
+		};
+
+		const resSource = await omise.sources.create(source);
+
 		const charge = await omise.charges.create({
 			amount: payload.amount,
-			currency: 'THB',
-			source: payload.omiseSource,
-			type: payload.type,
+			currency: payload.currency,
+			source: resSource.id,
 			return_uri: payload.host,
 			livemode: LIVEMODE
 		});
