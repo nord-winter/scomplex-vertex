@@ -11,7 +11,7 @@
 			id: '36',
 			title: 'SComplex 1x combo',
 			count: '1',
-			price: '25',
+			price: '1690',
 			noDiscount: '2190'
 		},
 		secondSet: {
