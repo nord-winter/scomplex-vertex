@@ -1,140 +1,138 @@
-<section id="testimonials" class="testimonials section dark-background">
-	<img src="assets/img/testimonials-bg.jpg" class="testimonials-bg" alt="" />
+<script>
+  import girlReview1 from '$lib/images/girl_reviews_1.avif';
+  import girlReview2 from '$lib/images/girl_reviews_2.webp';
+  import girlReview3 from '$lib/images/girl_reviews_3.png';
+</script>
 
-	<div class="container" data-aos="fade-up" data-aos-delay="100">
-		<div class="swiper init-swiper">
-			<script type="application/json" class="swiper-config">
-				{
-					"loop": true,
-					"speed": 600,
-					"autoplay": {
-						"delay": 5000
-					},
-					"slidesPerView": "auto",
-					"pagination": {
-						"el": ".swiper-pagination",
-						"type": "bullets",
-						"clickable": true
-					}
-				}
-			</script>
-			<div class="swiper-wrapper">
-				<div class="swiper-slide">
-					<div class="testimonial-item">
-						<img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="" />
-						<h3>Saul Goodman</h3>
-						<h4>Ceo &amp; Founder</h4>
-						<div class="stars">
-							<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-								class="bi bi-star-fill"
-							></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-						</div>
-						<p>
-							<i class="bi bi-quote quote-icon-left"></i>
-							<span
-								>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit
-								rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam,
-								risus at semper.</span
-							>
-							<i class="bi bi-quote quote-icon-right"></i>
-						</p>
-					</div>
-				</div>
-				<!-- End testimonial item -->
+<section style="color: #000;">
+  <div class="container py-5">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-10 col-xl-8 text-center">
+        <h3 class="fw-bold mb-4">คำรับรอง</h3>
+        <p class="mb-4 pb-2 mb-md-5 pb-md-0">
+          SCOMPLEX ผลิตภัณฑ์ที่ช่วยบำรุงผิวพรรณของคุณ ให้ดูสดใสและมีชีวิตชีวายิ่งขึ้น
+        </p>
+      </div>
+    </div>
 
-				<div class="swiper-slide">
-					<div class="testimonial-item">
-						<img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="" />
-						<h3>Sara Wilsson</h3>
-						<h4>Designer</h4>
-						<div class="stars">
-							<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-								class="bi bi-star-fill"
-							></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-						</div>
-						<p>
-							<i class="bi bi-quote quote-icon-left"></i>
-							<span
-								>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid
-								cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet
-								legam anim culpa.</span
-							>
-							<i class="bi bi-quote quote-icon-right"></i>
-						</p>
-					</div>
-				</div>
-				<!-- End testimonial item -->
-
-				<div class="swiper-slide">
-					<div class="testimonial-item">
-						<img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="" />
-						<h3>Jena Karlis</h3>
-						<h4>Store Owner</h4>
-						<div class="stars">
-							<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-								class="bi bi-star-fill"
-							></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-						</div>
-						<p>
-							<i class="bi bi-quote quote-icon-left"></i>
-							<span
-								>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem
-								veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint
-								minim.</span
-							>
-							<i class="bi bi-quote quote-icon-right"></i>
-						</p>
-					</div>
-				</div>
-				<!-- End testimonial item -->
-
-				<div class="swiper-slide">
-					<div class="testimonial-item">
-						<img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="" />
-						<h3>Matt Brandon</h3>
-						<h4>Freelancer</h4>
-						<div class="stars">
-							<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-								class="bi bi-star-fill"
-							></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-						</div>
-						<p>
-							<i class="bi bi-quote quote-icon-left"></i>
-							<span
-								>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim
-								fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem
-								dolore labore illum veniam.</span
-							>
-							<i class="bi bi-quote quote-icon-right"></i>
-						</p>
-					</div>
-				</div>
-				<!-- End testimonial item -->
-
-				<div class="swiper-slide">
-					<div class="testimonial-item">
-						<img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="" />
-						<h3>John Larson</h3>
-						<h4>Entrepreneur</h4>
-						<div class="stars">
-							<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-								class="bi bi-star-fill"
-							></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-						</div>
-						<p>
-							<i class="bi bi-quote quote-icon-left"></i>
-							<span
-								>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster
-								veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam
-								culpa fore nisi cillum quid.</span
-							>
-							<i class="bi bi-quote quote-icon-right"></i>
-						</p>
-					</div>
-				</div>
-				<!-- End testimonial item -->
-			</div>
-			<div class="swiper-pagination"></div>
-		</div>
-	</div>
+    <div class="row text-center">
+      <div class="col-md-4 mb-4 mb-md-0">
+        <div class="card">
+          <div class="card-body py-4 mt-2">
+            <div class="d-flex justify-content-center mb-4">
+              <img
+                src={girlReview1}
+                class="rounded-circle shadow-1-strong"
+                width="100"
+                height="100"
+              />
+            </div>
+            <h5 class="font-weight-bold">เทเรซ่า เมย์</h5>
+            <h6 class="font-weight-bold my-3">ผู้ก่อตั้งบริษัท ET</h6>
+            <ul class="list-unstyled d-flex justify-content-center">
+              <li>
+                <i class="bi bi-star-fill text-warning"></i>
+              </li>
+              <li>
+                <i class="bi bi-star-fill text-warning"></i>
+              </li>
+              <li>
+                <i class="bi bi-star-fill text-warning"></i>
+              </li>
+              <li>
+                <i class="bi bi-star-fill text-warning"></i>
+              </li>
+              <li>
+                <i class="bi bi-star-half text-warning"></i>
+              </li>
+            </ul>
+            <p class="mb-2">
+              <i class="fas fa-quote-left pe-2" />
+              หลังจากใช้ SCOMPLEX ผิวของฉันรู้สึกนุ่มนวลและชุ่มชื้นขึ้นมาก
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 mb-md-0">
+        <div class="card">
+          <div class="card-body py-4 mt-2">
+            <div class="d-flex justify-content-center mb-4">
+              <img
+                src={girlReview2}
+                class="rounded-circle shadow-1-strong"
+                width="100"
+                height="100"
+              />
+            </div>
+            <h5 class="font-weight-bold">แม็กกี้ แมคลอน</h5>
+            <h6 class="font-weight-bold my-3">ช่างภาพที่ Studio LA</h6>
+            <ul class="list-unstyled d-flex justify-content-center">
+              <li>
+                <i class="bi bi-star-fill text-warning"></i>
+              </li>
+              <li>
+                <i class="bi bi-star-fill text-warning"></i>
+              </li>
+              <li>
+                <i class="bi bi-star-fill text-warning"></i>
+              </li>
+              <li>
+                <i class="bi bi-star-fill text-warning"></i>
+              </li>
+              <li>
+                <i class="bi bi-star-fill text-warning"></i>
+              </li>
+            </ul>
+            <p class="mb-2">
+              <i class="fas fa-quote-left pe-2" />
+              SCOMPLEX ทำให้ผิวของฉันกระจ่างใสและดูสุขภาพดีขึ้นอย่างเห็นได้ชัด
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-0">
+        <div class="card">
+          <div class="card-body py-4 mt-2">
+            <div class="d-flex justify-content-center mb-4">
+              <img
+                src="{girlReview3}"
+                class="rounded-circle shadow-1-strong"
+                width="100"
+                height="100"
+              />
+            </div>
+            <h5 class="font-weight-bold">อเล็กซ่า ฮอร์วิทซ์</h5>
+            <h6 class="font-weight-bold my-3">นักพัฒนา Front-end ในนิวยอร์ก</h6>
+            <ul class="list-unstyled d-flex justify-content-center">
+              <li>
+                <i class="bi bi-star-fill text-warning"></i>
+              </li>
+              <li>
+                <i class="bi bi-star-fill text-warning"></i>
+              </li>
+              <li>
+                <i class="bi bi-star-fill text-warning"></i>
+              </li>
+              <li>
+                <i class="bi bi-star-fill text-warning"></i>
+              </li>
+              <li>
+                <i class="far fa-star fa-sm text-info" />
+              </li>
+            </ul>
+            <p class="mb-2">
+              <i class="fas fa-quote-left pe-2" />
+              ฉันชอบที่ SCOMPLEX ซึมเข้าสู่ผิวได้อย่างรวดเร็วและไม่เหนียวเหนอะหนะ
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+<style>
+  .card {
+    border-radius: 0.7rem;
+  }
+</style>
