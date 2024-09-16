@@ -218,7 +218,7 @@
 	</div>
 </div>
 
-<div class="container pt-5 pb-5">
+<div class="container pt-5 pb-5 mt-5">
 	<div class="py-5 text-center">
 		<h2>Checkout form</h2>
 	</div>
@@ -227,7 +227,7 @@
 			<div class="col-md-5 col-lg-4 order-md-last">
 				<h4 class="d-flex justify-content-between align-items-center mb-3">
 					<h3>Your cart</h3>
-					<span class="badge bg-primary rounded-pill">{product.count}</span>
+					<span class="badge dark-background rounded-pill">{product.count}</span>
 				</h4>
 
 				<div class="card p-4">
