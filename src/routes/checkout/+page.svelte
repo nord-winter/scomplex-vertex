@@ -13,7 +13,7 @@
 	import { PUBLIC_OPN_KEY, PUBLIC_CURRENCY_TYPE } from '$env/static/public';
 	import { onMount } from 'svelte';
 	import { superForm } from '/node_modules/sveltekit-superforms';
-	import { zod } from 'sveltekit-superforms/adapters'
+	import { zod } from 'sveltekit-superforms/adapters';
 
 	export let data;
 
@@ -59,6 +59,11 @@
 	let isPayButtonEnabled = false;
 	let selectedImage = '';
 
+	let qr_link = '';
+	let modalVisible = true;
+	let modalElement;
+	let modal;
+
 	selectedProduct.subscribe((value) => {
 		product = value;
 		if (product) {
@@ -76,10 +81,20 @@
 				goto('/');
 			}
 		}
+		if (modalElement) {
+			const bootstrapModal = new bootstrap.Modal(modalElement);
+		}
 	});
 
-	// // Реактивные выражения
-	// $: selectedImage = product ? images[product.id] : '';
+	$: {
+		if (qr_link) {
+			const bootstrapModal = new bootstrap.Modal(modalElement);
+			bootstrapModal.show();
+			console.log(bootstrapModal);
+			console.log(qr_link);
+		}
+	}
+
 	$: options.validators = steps[step - 1];
 	$: isPayButtonEnabled = step === 3 && document.getElementById('CheckPolicy')?.checked;
 
@@ -113,9 +128,11 @@
 					};
 				}
 				const paymentResult = await processPayment(payload);
-				
+
 				if (paymentResult.success && paymentResult.authorize_uri) {
-					// window.location.href = paymentResult.authorize_uri;
+					window.location.href = paymentResult.authorize_uri;
+				} else if (paymentResult.success && paymentResult.qr_code_uri) {
+					qr_link = paymentResult.qr_code_uri;
 				} else {
 					console.error('Error during payment:', paymentResult);
 				}
@@ -161,7 +178,7 @@
 			if (response.ok) {
 				const result = await response.json();
 				console.log('Payment Successful:', result);
-				return result; 
+				return result;
 			} else {
 				console.error('Payment Failed:', response.status);
 				return response;
@@ -171,9 +188,35 @@
 			return error;
 		}
 	}
+
+	function downloadQRCode() {
+		const link = document.createElement('a');
+		link.href = qr_link;
+		link.download = 'qrcode.png';
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
+	}
 </script>
 
 <!-- // TODO: Topbar -->
+<div bind:this={modalElement} class="modal fade" tabindex="-1" role="dialog" id="modalQR">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content rounded-4 shadow">
+			<div class="modal-body p-5">
+				<div id="omise-promptpay-qrcode">
+					<img alt="Omise PromptPay QR Code" src={qr_link} />
+				</div>
+				<button type="button" class="btn btn-lg btn-success mt-3 w-100" on:click={downloadQRCode}>
+					Download QR-code
+				</button>
+				<button type="button" class="btn btn-lg btn-danger mt-5 w-100" data-bs-dismiss="modal">
+					Close
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
 
 <div class="container pt-5 pb-5">
 	<div class="py-5 text-center">

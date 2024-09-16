@@ -8,7 +8,6 @@ const omise = omiseModule({
 	publicKey: PUBLIC_OPN_KEY
 });
 
-
 export async function POST({ request }) {
 	try {
 		const host = request.headers.get('origin') || '';
@@ -17,11 +16,13 @@ export async function POST({ request }) {
 		const paymentResult = await processPayment(payload);
 
 		if (paymentResult.success) {
+
 			return new Response(
 				JSON.stringify({
 					success: true,
 					message: 'Payment processed successfully',
 					data: paymentResult.data,
+					qr_code_uri: paymentResult.qr_code_uri,
 					authorize_uri: paymentResult.authorize_uri
 				}),
 				{ status: 200 }
@@ -57,10 +58,9 @@ async function processPayment(payload) {
 		return {
 			success: true,
 			data: { transactionId: charge.id, amount: payload.amount, charge: charge },
-      		authorize_uri: charge.authorize_uri
+			authorize_uri: charge.authorize_uri
 		};
 	} else if (payload.amount > 0 && payload.omiseSource) {
-		
 		const source = {
 			type: payload.type || 'promptpay',
 			barcode: payload.type || 'promptpay',
@@ -70,18 +70,20 @@ async function processPayment(payload) {
 		};
 
 		const resSource = await omise.sources.create(source);
-
 		const charge = await omise.charges.create({
 			amount: payload.amount,
 			currency: payload.currency,
 			source: resSource.id,
-			livemode: LIVEMODE,
-			
+			livemode: LIVEMODE
 		});
 		return {
 			success: true,
-			data: { transactionId: charge.id, amount: payload.amount, charge: charge },
-			authorize_uri: charge.authorize_uri
+			data: {
+				transactionId: charge.id,
+				amount: payload.amount,
+				charge: charge
+			},
+			qr_code_uri: charge.source?.scannable_code.image.download_uri
 		};
 	} else {
 		return { success: false, error: 'Invalid payment details' };

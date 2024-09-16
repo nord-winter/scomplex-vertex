@@ -34,6 +34,7 @@
 		"zod": "^3.23.8"
 	},
 	"dependencies": {
+		"@popperjs/core": "^2.11.8",
 		"aos": "^2.3.4",
 		"bootstrap": "^5.3.3",
 		"imask": "^7.6.1",
