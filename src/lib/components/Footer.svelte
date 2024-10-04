@@ -1,7 +1,7 @@
   
 <footer id="footer" class="footer dark-background">
-  <div class="container footer-top">
-    <div class="container copyright text-center mt-4">
+  <div class="container">
+    <div class="container copyright text-center">
       <p>FDA : 11-1-18157-1-0235</p>
       <p>Copyright © 2567 All rights reserved.</p>
       <p>
