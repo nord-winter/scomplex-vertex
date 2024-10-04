@@ -11,22 +11,22 @@
 			id: '36',
 			title: 'SComplex 1x combo',
 			count: '1',
-			price: '1690',
-			noDiscount: '2190'
+			price: '790',
+			noDiscount: '900'
 		},
 		secondSet: {
 			id: '37',
 			title: 'SComplex 3x combo',
 			count: '3',
-			price: '3590',
-			noDiscount: '5070'
+			price: '2190',
+			noDiscount: '2450'
 		},
 		thirdSet: {
 			id: '38',
 			title: 'SComplex 5x combo',
 			count: '5',
-			price: '4990',
-			noDiscount: '8450'
+			price: '2990',
+			noDiscount: '3400'
 		}
 	};
 
