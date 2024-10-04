@@ -4,6 +4,7 @@
     import Stats from "$lib/components/Stats.svelte";
     import Pricing from "$lib/components/Pricing.svelte";
     import Faq from "$lib/components/FAQ.svelte";
+    import Problem from "$lib/components/Problem.svelte";
     import Reviews from "$lib/components/Reviews.svelte";
     // import Contact from "$lib/components/Contact.svelte";
 </script>
@@ -14,8 +15,9 @@
 <Stats />
 <AboutUs />
 <Faq />
-
+<Problem />
 <Reviews />
+
 <!-- <Contact /> -->
 <!-- Preloader -->
 <!-- <div id="preloader"></div> -->
