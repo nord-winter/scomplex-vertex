@@ -11,6 +11,10 @@
       <p style="font-size: 11px; font-style: italic;">ควรกินอาหารหลากหลายครบ 5 หมู่ ในสัดส่วนที่เหมาะสมเป็นประจํา</p>
       <p style="font-size: 11px; font-style: italic;">ไม่มีผลในการป้องกันหรือรักษาโรค | อ่านคําเตือนในฉลากก่อนบริโภค</p>
       <p style="font-size: 11px; font-style: italic;">เด็กและสตรีมีครรภ์ไม่ควรรับประทาน | ผลลัพธ์ที่ได้ขึ้นอยู่กับสภาพร่างกายของแต่ละบุคคล</p>
+      <br>
+      <a href="/conditions" style="color: #fff;">เงื่อนไขการจัดส่งและการคืนสินค้า</a>
+      <br>
+      <a href="/privacy" style="color: #fff;">ข้อตกลงและเงื่อนไข</a>
     </div>
   </div>
 </footer>
